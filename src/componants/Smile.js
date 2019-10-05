@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
+import Button from "@material-ui/core/Button";
+import React, { Component } from "react";
 
 class Smile extends Component {
-    render() { 
-        return (
-            <h1>:) :)</h1>
-          );
-    }
+  render() {
+    return (
+      <Button variant="contained" color="primary">
+        Smile
+      </Button>
+    );
+  }
 }
- 
+
 export default Smile;
