@@ -1,14 +1,14 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const reurseUrlTheme = createMuiTheme({
+const reuseUrlTheme = createMuiTheme({
   palette: {
     primary: {
-      main: "#2979ff"
+      main: "#f3f3f3"
     },
     secondary: {
-      main: "#512da8"
+      main: "#ff80ab"
     }
   }
 });
 
-export default reurseUrlTheme;
+export default reuseUrlTheme;

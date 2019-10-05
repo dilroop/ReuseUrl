@@ -1,19 +1,17 @@
 import React from "react";
 import AppBar from "./componants/AppBar";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import reurseUrlTheme from "./reurseUrlTheme";
+import { ThemeProvider } from "@material-ui/styles";
+import reuseUrlTheme from "./reuseUrlTheme";
+import InfoContent from "./componants/home/InfoContent";
 
 const App = () => {
   return (
-    <MuiThemeProvider theme={reurseUrlTheme}>
+    <ThemeProvider theme={reuseUrlTheme}>
       <div>
         <AppBar />
-        <h1>Hello Might</h1>
-        <h3>Aakash Bista </h3>
-        &amp;
-        <h3> Parth Patel</h3>
+        <InfoContent />
       </div>
-    </MuiThemeProvider>
+    </ThemeProvider>
   );
 };
 
