@@ -7,8 +7,10 @@ import InfoContent from "./componants/home/InfoContent";
 const App = () => {
     return (
         <ThemeProvider theme={reuseUrlTheme}>
+          
             <AppBar />
-            <InfoContent />
+
+            <InfoContent/>
         </ThemeProvider>
     );
 };

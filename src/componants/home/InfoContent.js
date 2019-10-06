@@ -19,41 +19,41 @@ const defaultOptions = {
 class InfoContent extends Component {
     render() {
         return (
-            <div style={{ background: "#e3f2fd" }}>
+            <Box style={{ background: "#e3f2fd" }} mt={1}>
                 <Container fixed>
                     <Grid container spacing={3}>
                         <Grid item sm={12}>
-                            <Box display={displayUtils.smDownVisible} height="50vh">
-                                <Lottie options={defaultOptions} width="100%" />
+                            <Box display={displayUtils.smDownVisible} height="50vh" width="100%" px={1}>
+                                <Lottie options={defaultOptions} />
+                            </Box>
+                        </Grid>
+
+                        <Grid item sm={12} md={6} height="100%">
+                            <Box display="flex" alignItems="center" height="100%">
+                                <Box fontWeight="fontWeightLight" px={1}>
+                                    <Typography variant="h5" gutterBottom fontWeight="fontWeightLight">
+                                        <Box fontWeight="fontWeightLight">Reuseable Short Url?</Box>
+                                    </Typography>
+                                    <Typography variant="body1" gutterBottom>
+                                        <Box fontWeight="fontWeightLight">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+                                            tenetur unde suscipit, quam beatae rerum inventore consectetur, neque
+                                            doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi
+                                            quidem quibusdam.
+                                        </Box>
+                                    </Typography>
+                                </Box>
                             </Box>
                         </Grid>
 
                         <Grid item sm={12} md={6}>
-                            <Box height="100%" alignItems="flex-end">
-                                <Typography variant="h5" gutterBottom>
-                                    <Box fontWeight="fontWeightLight" px={3}>
-                                        Reuseable Short Url?
-                                    </Box>
-                                </Typography>
-                                <Typography variant="body1" gutterBottom>
-                                    <Box fontWeight="fontWeightLight" px={3}>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
-                                        tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus,
-                                        cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem
-                                        quibusdam.
-                                    </Box>
-                                </Typography>
-                            </Box>
-                        </Grid>
-
-                        <Grid item sm={12} md={6}>
-                            <Box display={displayUtils.mdUpVisible}>
+                            <Box display={displayUtils.mdUpVisible} px={1}>
                                 <Lottie options={defaultOptions} width="100%" />
                             </Box>
                         </Grid>
                     </Grid>
                 </Container>
-            </div>
+            </Box>
         );
     }
 }

@@ -23,18 +23,16 @@ export default function Bar() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <AppBar position="static" elevation={0}>
-                <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" className={classes.title} noWrap>
-                        Reuse Urls
-                    </Typography>
-                    <Button color="inherit">Login</Button>
-                </Toolbar>
-            </AppBar>
-        </div>
+        <AppBar position="static" elevation={0} className={classes.root}>
+            <Toolbar>
+                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                    <MenuIcon />
+                </IconButton>
+                <Typography variant="h6" className={classes.title} noWrap>
+                    Reuse Urls
+                </Typography>
+                <Button color="inherit">Login</Button>
+            </Toolbar>
+        </AppBar>
     );
 }
