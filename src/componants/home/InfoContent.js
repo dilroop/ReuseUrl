@@ -17,10 +17,9 @@ const defaultOptions = {
 };
 
 class InfoContent extends Component {
-    state = {};
     render() {
         return (
-            <div>
+            <div style={{ background: "#e3f2fd" }}>
                 <Container fixed>
                     <Grid container spacing={3}>
                         <Grid item sm={12}>
@@ -29,8 +28,8 @@ class InfoContent extends Component {
                             </Box>
                         </Grid>
 
-                        <Grid item sm={12} md={6} alignContent="flex-end" height="100%">
-                            <Box height="50vh">
+                        <Grid item sm={12} md={6}>
+                            <Box height="100%" alignItems="flex-end">
                                 <Typography variant="h5" gutterBottom>
                                     <Box fontWeight="fontWeightLight" px={3}>
                                         Reuseable Short Url?
