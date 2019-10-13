@@ -24,7 +24,7 @@ class InfoContent extends Component {
                     <Grid container>
                         <Grid item sm={12}>
                             <Box display={displayUtils.smDownVisible} height="50vh">
-                                <Lottie options={defaultOptions} />
+                                <Lottie options={defaultOptions} width="100%" />
                             </Box>
                         </Grid>
 
