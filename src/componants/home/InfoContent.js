@@ -19,11 +19,11 @@ const defaultOptions = {
 class InfoContent extends Component {
     render() {
         return (
-            <Box style={{ background: "#e3f2fd" }} mt={1}>
+            <Box style={{ background: "#e3f2fd" }}>
                 <Container fixed>
-                    <Grid container spacing={3}>
+                    <Grid container>
                         <Grid item sm={12}>
-                            <Box display={displayUtils.smDownVisible} height="50vh" width="100%" px={1}>
+                            <Box display={displayUtils.smDownVisible}>
                                 <Lottie options={defaultOptions} />
                             </Box>
                         </Grid>
