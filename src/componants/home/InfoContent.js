@@ -23,13 +23,13 @@ class InfoContent extends Component {
                 <Container fixed>
                     <Grid container>
                         <Grid item sm={12}>
-                            <Box display={displayUtils.smDownVisible}>
+                            <Box display={displayUtils.smDownVisible} height="50vh">
                                 <Lottie options={defaultOptions} />
                             </Box>
                         </Grid>
 
                         <Grid item sm={12} md={6} height="100%">
-                            <Box display="flex" alignItems="center" height="100%">
+                            <Box display="flex" alignItems="center" height="100%" mb={8}>
                                 <Box fontWeight="fontWeightLight" px={1}>
                                     <Typography variant="h5" gutterBottom fontWeight="fontWeightLight">
                                         <Box fontWeight="fontWeightLight">Reuseable Short Url?</Box>
