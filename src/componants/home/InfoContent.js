@@ -28,8 +28,8 @@ class InfoContent extends Component {
                             </Box>
                         </Grid>
 
-                        <Grid item sm={12} md={6} height="100%">
-                            <Box display="flex" alignItems="center" height="100%" mb={8}>
+                        <Grid item sm={12} md={6}>
+                            <Box display="flex" alignItems="center" height="50vh">
                                 <Box fontWeight="fontWeightLight" px={1}>
                                     <Typography variant="h5" gutterBottom>
                                         Reuseable Short Url?
