@@ -35,10 +35,9 @@ class InfoContent extends Component {
                                         Reuseable Short Url?
                                     </Typography>
                                     <Typography variant="body1" gutterBottom>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
-                                        tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus,
-                                        cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem
-                                        quibusdam.
+                                        We will generate a short reuseable link, Use of the static link with dynamic
+                                        destination can be handy in situations like have permanent link for your next
+                                        live stream or permanent link to your CV.
                                     </Typography>
                                 </Box>
                             </Box>
