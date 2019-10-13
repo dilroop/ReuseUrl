@@ -21,9 +21,9 @@ class InfoContent extends Component {
         return (
             <Box style={{ background: "#e3f2fd" }}>
                 <Container fixed>
-                    <Grid container>
+                    <Grid container fontWeight="fontWeightLight">
                         <Grid item sm={12}>
-                            <Box display={displayUtils.smDownVisible} height="50vh">
+                            <Box display={displayUtils.smDownVisible} height="50vh" justifyContent="center">
                                 <Lottie options={defaultOptions} width="100%" />
                             </Box>
                         </Grid>
@@ -31,16 +31,14 @@ class InfoContent extends Component {
                         <Grid item sm={12} md={6} height="100%">
                             <Box display="flex" alignItems="center" height="100%" mb={8}>
                                 <Box fontWeight="fontWeightLight" px={1}>
-                                    <Typography variant="h5" gutterBottom fontWeight="fontWeightLight">
-                                        <Box fontWeight="fontWeightLight">Reuseable Short Url?</Box>
+                                    <Typography variant="h5" gutterBottom>
+                                        Reuseable Short Url?
                                     </Typography>
                                     <Typography variant="body1" gutterBottom>
-                                        <Box fontWeight="fontWeightLight">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
-                                            tenetur unde suscipit, quam beatae rerum inventore consectetur, neque
-                                            doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi
-                                            quidem quibusdam.
-                                        </Box>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+                                        tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus,
+                                        cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem
+                                        quibusdam.
                                     </Typography>
                                 </Box>
                             </Box>
