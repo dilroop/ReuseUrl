@@ -30,7 +30,7 @@ export default function Bar() {
     const classes = useStyles();
 
     return (
-        <AppBar position="static" elevation={0} className={classes.background}>
+        <AppBar position="sticky" elevation={0} className={classes.background}>
             <Toolbar>
                 <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                     <MenuIcon />

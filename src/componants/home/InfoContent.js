@@ -2,9 +2,9 @@ import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import { styled } from "@material-ui/core/styles";
+import { makeStyles, styled } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import React, { Component } from "react";
+import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../../lottie/contentAnimation.json";
 import displayUtils from "../../utils/displayUtils";
@@ -28,57 +28,73 @@ const defaultOptions = {
     }
 };
 
-class InfoContent extends Component {
-    signUpOnClick() {
+const useStyles = makeStyles(theme => ({
+    background: {
+        flexGrow: 1,
+        background: "linear-gradient(45deg, #bc4e9c 30%, #f80759 90%)",
+        border: 0,
+        color: "white"
+    }
+}));
+
+export default function InfoContent() {
+    const classes = useStyles();
+
+    const signUpOnClick = () => {
         alert("Test");
-    }
+    };
 
-    render() {
-        return (
-            <Box>
-                <Box>
-                    <Container fixed>
-                        <Grid container fontWeight="fontWeightLight">
-                            <Grid item sm={12}>
-                                <Box display={displayUtils.smDownVisible} alignItems="center">
-                                    <Lottie options={defaultOptions} width="100%" />
-                                </Box>
-                            </Grid>
+    return (
+        <Box>
+            <Container fixed>
+                <Grid container fontWeight="fontWeightLight">
+                    <Grid item sm={12}>
+                        <Box display={displayUtils.smDownVisible} alignItems="center">
+                            <Lottie options={defaultOptions} width="100%" />
+                        </Box>
+                    </Grid>
 
-                            <Grid item sm={12} md={6}>
-                                <Box display="flex" alignItems="center" height="50vh">
-                                    <Box fontWeight="fontWeightLight" px={1}>
-                                        <Typography variant="h5" gutterBottom>
-                                            Reuseable Short Url?
-                                        </Typography>
-                                        <Typography variant="body1" gutterBottom>
-                                            We will generate a short reuseable link, Use of the static link with dynamic
-                                            destination can be handy in situations like have permanent link for your
-                                            next live stream or permanent link to your CV.
-                                        </Typography>
-                                        <Box mt={6}>
-                                            <ReButton onClick={this.signUpOnClick}>Sign Up</ReButton>
-                                        </Box>
-                                    </Box>
+                    <Grid item sm={12} md={6}>
+                        <Box display="flex" alignItems="center" height="100%">
+                            <Box fontWeight="fontWeightLight" px={1} py={8}>
+                                <Typography variant="h5" gutterBottom>
+                                    Reuseable Short Url?
+                                </Typography>
+                                <Typography variant="body1" gutterBottom>
+                                    We will generate a short reuseable link, Use of the static link with dynamic
+                                    destination can be handy in situations like have permanent link for your next live
+                                    stream or permanent link to your CV.
+                                </Typography>
+                                <Box mt={6}>
+                                    <ReButton onClick={signUpOnClick}>Sign Up</ReButton>
                                 </Box>
-                            </Grid>
+                            </Box>
+                        </Box>
+                    </Grid>
 
-                            <Grid item sm={12} md={6} height="100%">
-                                <Box display={displayUtils.mdUpVisible} px={2} height="100%">
-                                    <Box display="flex" alignItems="center" height="100%">
-                                        <Lottie options={defaultOptions} width="100%" height="50%" />
-                                    </Box>
-                                </Box>
-                            </Grid>
-                        </Grid>
-                    </Container>
-                </Box>
-                <Box height="50vh" alignItems="center" style={{ background: "#e3f2fd" }}>
-                    Hello
-                </Box>
+                    <Grid item sm={12} md={6}>
+                        <Box display={displayUtils.mdUpVisible} px={2} height="70vh">
+                            <Box display="flex" alignItems="center" height="100%">
+                                <Lottie options={defaultOptions} width="100%" height="50%" />
+                            </Box>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </Container>
+            <Box className={classes.background}>
+                <Container fixed>
+                    <Box display="flex" fontWeight="fontWeightLight" height="70vh" py={6} alignItems="center">
+                        <Box justifyContent="center" alignItems="center">
+                            <Typography variant="h4" gutterBottom>
+                                <i>What would you like to use reurl for ?</i>
+                            </Typography>
+                            <Typography variant="body1" gutterBottom>
+                                Please share your feedback
+                            </Typography>
+                        </Box>
+                    </Box>
+                </Container>
             </Box>
-        );
-    }
+        </Box>
+    );
 }
-
-export default InfoContent;
