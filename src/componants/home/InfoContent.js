@@ -8,6 +8,7 @@ import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../../lottie/contentAnimation.json";
 import displayUtils from "../../utils/displayUtils";
+import Icon from '@material-ui/core/Icon';
 
 const ReButton = styled(Button)({
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
@@ -32,6 +33,12 @@ const useStyles = makeStyles(theme => ({
     background: {
         flexGrow: 1,
         background: "linear-gradient(45deg, #bc4e9c 30%, #f80759 90%)",
+        border: 0,
+        color: "white"
+    },
+    footer: {
+        flexGrow: 1,
+        background: "linear-gradient(45deg, #222222 20%, #444444 80%)",
         border: 0,
         color: "white"
     }
@@ -83,7 +90,7 @@ export default function InfoContent() {
             </Container>
             <Box className={classes.background}>
                 <Container fixed>
-                    <Box display="flex" fontWeight="fontWeightLight" height="70vh" py={6} alignItems="center">
+                    <Box display="flex" height="70vh" py={6} alignItems="center">
                         <Box justifyContent="center" alignItems="center">
                             <Typography variant="h4" gutterBottom>
                                 <i>What would you like to use reurl for ?</i>
@@ -93,6 +100,40 @@ export default function InfoContent() {
                             </Typography>
                         </Box>
                     </Box>
+                </Container>
+            </Box>
+            <Box className={classes.footer} py={2}>
+                <Container fixed>
+                    <Grid container>
+                        <Grid item sm={12} md={3}>
+                            <Typography variant="body2" gutterBottom>
+                                <Box justifyContent="center" alignItems="center" fontSize={12}>
+                                    Terms And Conditions
+                                </Box>
+                            </Typography>
+                        </Grid>
+                        <Grid item sm={12} md={3}>
+                            <Typography variant="body2" gutterBottom>
+                                <Box justifyContent="center" alignItems="center" fontSize={12}>
+                                    About Us
+                                </Box>
+                            </Typography>
+                        </Grid>
+                        <Grid item sm={12} md={3}>
+                            <Typography variant="body2" gutterBottom>
+                                <Box justifyContent="center" alignItems="center" fontSize={12}>
+                                    Contact Us
+                                </Box>
+                            </Typography>
+                        </Grid>
+                        <Grid item sm={12} md={3}>
+                            <Typography variant="body2" gutterBottom>
+                                <Box justifyContent="center" alignItems="center" fontSize={12}>
+                                    Follow Us
+                                </Box>
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Container>
             </Box>
         </Box>
