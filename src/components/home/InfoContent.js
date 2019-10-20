@@ -32,7 +32,7 @@ const defaultOptions = {
 const useStyles = makeStyles(theme => ({
     background: {
         flexGrow: 1,
-        background: "linear-gradient(90deg, #FE6B8B 30%, #FF8E53 90%)",
+        background: "linear-gradient(90deg, #da5a76 30%, #db8254 90%)",
         border: 0,
         color: "white"
     }
