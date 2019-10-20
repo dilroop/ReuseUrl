@@ -8,7 +8,7 @@ import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../../lottie/contentAnimation.json";
 import displayUtils from "../../utils/displayUtils";
-import Icon from '@material-ui/core/Icon';
+import Footer from "../../components/home/Footer";
 
 const ReButton = styled(Button)({
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
@@ -32,13 +32,7 @@ const defaultOptions = {
 const useStyles = makeStyles(theme => ({
     background: {
         flexGrow: 1,
-        background: "linear-gradient(45deg, #bc4e9c 30%, #f80759 90%)",
-        border: 0,
-        color: "white"
-    },
-    footer: {
-        flexGrow: 1,
-        background: "linear-gradient(45deg, #222222 20%, #444444 80%)",
+        background: "linear-gradient(90deg, #FE6B8B 30%, #FF8E53 90%)",
         border: 0,
         color: "white"
     }
@@ -88,6 +82,7 @@ export default function InfoContent() {
                     </Grid>
                 </Grid>
             </Container>
+
             <Box className={classes.background}>
                 <Container fixed>
                     <Box display="flex" height="70vh" py={6} alignItems="center">
@@ -102,40 +97,8 @@ export default function InfoContent() {
                     </Box>
                 </Container>
             </Box>
-            <Box className={classes.footer} py={2}>
-                <Container fixed>
-                    <Grid container>
-                        <Grid item sm={12} md={3}>
-                            <Typography variant="body2" gutterBottom>
-                                <Box justifyContent="center" alignItems="center" fontSize={12}>
-                                    Terms And Conditions
-                                </Box>
-                            </Typography>
-                        </Grid>
-                        <Grid item sm={12} md={3}>
-                            <Typography variant="body2" gutterBottom>
-                                <Box justifyContent="center" alignItems="center" fontSize={12}>
-                                    About Us
-                                </Box>
-                            </Typography>
-                        </Grid>
-                        <Grid item sm={12} md={3}>
-                            <Typography variant="body2" gutterBottom>
-                                <Box justifyContent="center" alignItems="center" fontSize={12}>
-                                    Contact Us
-                                </Box>
-                            </Typography>
-                        </Grid>
-                        <Grid item sm={12} md={3}>
-                            <Typography variant="body2" gutterBottom>
-                                <Box justifyContent="center" alignItems="center" fontSize={12}>
-                                    Follow Us
-                                </Box>
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                </Container>
-            </Box>
+
+            <Footer />
         </Box>
     );
 }
