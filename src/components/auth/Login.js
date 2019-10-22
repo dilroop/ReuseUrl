@@ -48,7 +48,7 @@ export default function Login() {
                                 <Grid item xs={12}>
                                     <Box display={displayUtils.smDownVisible}>
                                         <Box display="flex" justifyContent="center">
-                                            <img src="../images/login.svg" width="80%" />
+                                            <img src="../images/login.svg" width="80%" alt="Reuse Url" />
                                         </Box>
                                     </Box>
                                 </Grid>
@@ -87,7 +87,7 @@ export default function Login() {
                                 <Grid item xs={12} md={6}>
                                     <Box display={displayUtils.mdUpVisible}>
                                         <Box display="flex" justifyContent="flex-end">
-                                            <img src="../images/login.svg" width="90%" />
+                                            <img src="../images/login.svg" width="90%" alt="Reuse Url" />
                                         </Box>
                                     </Box>
                                 </Grid>
