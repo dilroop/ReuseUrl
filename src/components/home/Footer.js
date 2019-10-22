@@ -22,32 +22,24 @@ export default function Footer() {
             <Container fixed>
                 <Grid container>
                     <Grid item xs={12} sm={12} md={3}>
-                        <Typography gutterBottom>
-                            <Box textAlign="center" fontSize={12}>
-                                Terms And Conditions
-                            </Box>
-                        </Typography>
+                        <Box textAlign="center" fontSize={12} my={2}>
+                            Terms And Conditions
+                        </Box>
                     </Grid>
                     <Grid item xs={12} sm={12} md={3}>
-                        <Typography gutterBottom>
-                            <Box textAlign="center" fontSize={12}>
-                                About Us
-                            </Box>
-                        </Typography>
+                        <Box textAlign="center" fontSize={12} my={2}>
+                            About Us
+                        </Box>
                     </Grid>
                     <Grid item xs={12} sm={12} md={3}>
-                        <Typography gutterBottom>
-                            <Box textAlign="center" fontSize={12}>
-                                Contact Us
-                            </Box>
-                        </Typography>
+                        <Box textAlign="center" fontSize={12} my={2}>
+                            Contact Us
+                        </Box>
                     </Grid>
                     <Grid item xs={12} sm={12} md={3}>
-                        <Typography gutterBottom>
-                            <Box textAlign="center" fontSize={12}>
-                                Follow Us
-                            </Box>
-                        </Typography>
+                        <Box textAlign="center" fontSize={12} my={2}>
+                            Follow Us
+                        </Box>
                     </Grid>
                 </Grid>
             </Container>
