@@ -5,10 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 import Lottie from "react-lottie";
+import { useHistory } from "react-router-dom";
 import animationData from "../../lottie/contentAnimation.json";
 import displayUtils from "../../utils/displayUtils";
 import ReButton from "../commonUIElements";
-import { Link } from "react-router-dom";
 
 const defaultOptions = {
     loop: true,
@@ -30,9 +30,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function InfoContent() {
     const classes = useStyles();
+    let history = useHistory();
 
     const signUpOnClick = () => {
-        alert("Test");
+        history.push("/login");
     };
 
     return (
@@ -58,9 +59,7 @@ export default function InfoContent() {
                                 </Typography>
                                 <Box mt={6}>
                                     {/* todo: temp login button substitution */}
-                                    <ReButton onClick={signUpOnClick} component={Link} to="/login">
-                                        Login
-                                    </ReButton>
+                                    <ReButton onClick={signUpOnClick}>Login</ReButton>
                                 </Box>
                             </Box>
                         </Box>
