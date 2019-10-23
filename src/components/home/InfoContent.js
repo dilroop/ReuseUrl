@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 import animationData from "../../lottie/contentAnimation.json";
 import displayUtils from "../../utils/displayUtils";
 import ReButton from "../commonUIElements";
+import Route from "../appRoute.js";
 
 const defaultOptions = {
     loop: true,
@@ -33,7 +34,7 @@ export default function InfoContent() {
     let history = useHistory();
 
     const signUpOnClick = () => {
-        history.push("/login");
+        history.push(Route.Login);
     };
 
     return (
