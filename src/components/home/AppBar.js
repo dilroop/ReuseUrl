@@ -6,7 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import Route from "../appRoute";
+import AppRoute from "../appRoute";
+import { Switch, Route } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -30,7 +31,7 @@ export default function Bar() {
     let history = useHistory();
 
     const onLogoClick = () => {
-        history.push(Route.Home);
+        history.push(AppRoute.Home);
     };
 
     return (
@@ -39,9 +40,25 @@ export default function Bar() {
                 <Typography variant="h6" className={classes.title} noWrap onClick={onLogoClick}>
                     Reuse Urls
                 </Typography>
-                <Button color="inherit" component={Link} to={Route.Login}>
-                    Login
-                </Button>
+                <Switch>
+                    <Route
+                        exact
+                        path={AppRoute.Login}
+                        render={() => (
+                            <Button color="inherit" component={Link} to={AppRoute.Login}>
+                                Signup
+                            </Button>
+                        )}
+                    />
+                    <Route
+                        path={AppRoute.Home}
+                        render={() => (
+                            <Button color="inherit" component={Link} to={AppRoute.Login}>
+                                Login
+                            </Button>
+                        )}
+                    />
+                </Switch>
             </Toolbar>
         </AppBar>
     );

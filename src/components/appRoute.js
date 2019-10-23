@@ -1,8 +1,8 @@
-const Route = {
+const AppRoute = {
     Home: "/",
     Login: "/login",
     Signup: "/signup",
     About: "/about"
 };
 
-export default Route;
+export default AppRoute;
