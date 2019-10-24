@@ -45,7 +45,7 @@ export default function Bar() {
                         exact
                         path={AppRoute.Login}
                         render={() => (
-                            <Button color="inherit" component={Link} to={AppRoute.Login}>
+                            <Button color="inherit" component={Link} to={AppRoute.Signup}>
                                 Signup
                             </Button>
                         )}

@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
+import MenuItem from "@material-ui/core/MenuItem";
 import displayUtils from "../../utils/displayUtils";
 import ReButton from "../commonUIElements";
 
@@ -31,10 +32,40 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function Login() {
+const currencies = [
+    {
+        value: "USD",
+        label: "$"
+    },
+    {
+        value: "EUR",
+        label: "€"
+    },
+    {
+        value: "BTC",
+        label: "฿"
+    },
+    {
+        value: "JPY",
+        label: "¥"
+    }
+];
+
+export default function Signup() {
     const classes = useStyles();
+    const [values, setValues] = React.useState({
+        name: "JPY",
+        age: "",
+        multiline: "Controlled",
+        currency: "EUR"
+    });
+
     const loginOnClick = () => {
         alert("Not Implemented");
+    };
+
+    const handleChange = name => event => {
+        setValues({ ...values, [name]: event.target.value });
     };
 
     return (
@@ -47,7 +78,15 @@ export default function Login() {
                                 <Grid item xs={12}>
                                     <Box display={displayUtils.smDownVisible}>
                                         <Box display="flex" justifyContent="center">
-                                            <img src="../images/login.svg" width="80%" alt="Reuse Url" />
+                                            <img src="../images/signup.svg" width="80%" alt="Reuse Url" />
+                                        </Box>
+                                    </Box>
+                                </Grid>
+
+                                <Grid item xs={12} md={6}>
+                                    <Box display={displayUtils.mdUpVisible}>
+                                        <Box display="flex" justifyContent="flex-end">
+                                            <img src="../images/signup.svg" width="90%" alt="Reuse Url" />
                                         </Box>
                                     </Box>
                                 </Grid>
@@ -56,14 +95,14 @@ export default function Login() {
                                     <Box display="flex" justifyContent="center" alignItems="center" height="100%">
                                         <Box px={2} py={4}>
                                             <Typography variant="h5" component="h2" mb={2}>
-                                                Log in to Reuse Url
+                                                Signup to Reuse Url
                                             </Typography>
                                             <TextField
                                                 id="emailField"
                                                 label="Email"
                                                 className={classes.textField}
                                                 type="text"
-                                                autoComplete="username"
+                                                autoComplete="email"
                                                 variant="filled"
                                             />
                                             <br />
@@ -76,17 +115,39 @@ export default function Login() {
                                                 variant="filled"
                                             />
                                             <br />
+                                            <TextField
+                                                id="nameField"
+                                                label="Name"
+                                                className={classes.textField}
+                                                type="text"
+                                                autoComplete="name"
+                                                variant="filled"
+                                            />
+                                            <br />
+                                            <TextField
+                                                select
+                                                id="filled-select-currency"
+                                                label="Select"
+                                                className={classes.textField}
+                                                value={values.name}
+                                                onChange={handleChange("name")}
+                                                SelectProps={{
+                                                    MenuProps: {
+                                                        className: classes.textField
+                                                    }
+                                                }}
+                                                variant="filled"
+                                            >
+                                                {currencies.map(option => (
+                                                    <MenuItem key={option.value} value={option.value}>
+                                                        {option.label}
+                                                    </MenuItem>
+                                                ))}
+                                            </TextField>
+                                            <br />
                                             <Box mt={2}>
-                                                <ReButton onClick={loginOnClick}>Login</ReButton>
+                                                <ReButton onClick={loginOnClick}>Signup</ReButton>
                                             </Box>
-                                        </Box>
-                                    </Box>
-                                </Grid>
-
-                                <Grid item xs={12} md={6}>
-                                    <Box display={displayUtils.mdUpVisible}>
-                                        <Box display="flex" justifyContent="flex-end">
-                                            <img src="../images/login.svg" width="90%" alt="Reuse Url" />
                                         </Box>
                                     </Box>
                                 </Grid>
