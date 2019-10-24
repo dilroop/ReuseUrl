@@ -2,12 +2,13 @@ import Box from "@material-ui/core/Box";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from "@material-ui/core/Container";
+import countryList from "react-select-country-list";
 import Grid from "@material-ui/core/Grid";
+import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
-import MenuItem from "@material-ui/core/MenuItem";
 import displayUtils from "../../utils/displayUtils";
 import ReButton from "../commonUIElements";
 
@@ -32,33 +33,16 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const currencies = [
-    {
-        value: "USD",
-        label: "$"
-    },
-    {
-        value: "EUR",
-        label: "€"
-    },
-    {
-        value: "BTC",
-        label: "฿"
-    },
-    {
-        value: "JPY",
-        label: "¥"
-    }
-];
-
 export default function Signup() {
     const classes = useStyles();
     const [values, setValues] = React.useState({
         name: "JPY",
         age: "",
-        multiline: "Controlled",
-        currency: "EUR"
+        country: "IN"
     });
+
+    const countries = countryList().getData();
+    console.log(countries);
 
     const loginOnClick = () => {
         alert("Not Implemented");
@@ -127,10 +111,10 @@ export default function Signup() {
                                             <TextField
                                                 select
                                                 id="filled-select-currency"
-                                                label="Select"
+                                                label="Country"
                                                 className={classes.textField}
-                                                value={values.name}
-                                                onChange={handleChange("name")}
+                                                value={values.country}
+                                                onChange={handleChange("country")}
                                                 SelectProps={{
                                                     MenuProps: {
                                                         className: classes.textField
@@ -138,7 +122,7 @@ export default function Signup() {
                                                 }}
                                                 variant="filled"
                                             >
-                                                {currencies.map(option => (
+                                                {countries.map(option => (
                                                     <MenuItem key={option.value} value={option.value}>
                                                         {option.label}
                                                     </MenuItem>
