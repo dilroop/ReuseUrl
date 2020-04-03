@@ -23,9 +23,9 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}  
-    - run: | 
-        echo 'Start Testing...'
+        node-version: ${{ matrix.node-version }}    
+    - name: Install Dependencies
+    - run: npm install
+    - run: echo 'Start Testing...'
     - run: npm test
-    - run: |
-        echo 'Testing Finished'
+    - run: echo 'Testing Finished'
