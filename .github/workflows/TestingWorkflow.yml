@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [10.16.1]
 
     steps:
     - uses: actions/checkout@v2
@@ -27,7 +27,5 @@ jobs:
     - run: | 
         echa 'Start Testing...'
     - run: npm test
-      env:
-        CI: true
     - run: |
         echa 'Testing Finished'
