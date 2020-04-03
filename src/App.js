@@ -8,7 +8,7 @@ import AppBar from "./components/home/AppBar";
 import Footer from "./components/home/Footer";
 import InfoContent from "./components/home/InfoContent";
 import reuseUrlTheme from "./reuseUrlTheme";
-
+ 
 const App = () => {
     return (
         <ThemeProvider theme={reuseUrlTheme}>
