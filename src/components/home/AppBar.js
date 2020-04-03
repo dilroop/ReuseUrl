@@ -38,7 +38,7 @@ export default function Bar() {
         <AppBar position="sticky" elevation={0} className={classes.background}>
             <Toolbar>
                 <Typography variant="h6" className={classes.title} noWrap onClick={onLogoClick}>
-                    Reuse Urls
+                    Reuse Url
                 </Typography>
                 <Switch>
                     <Route
