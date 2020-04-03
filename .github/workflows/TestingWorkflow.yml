@@ -25,7 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}  
     - run: | 
-        echa 'Start Testing...'
+        echo 'Start Testing...'
     - run: npm test
     - run: |
-        echa 'Testing Finished'
+        echo 'Testing Finished'
