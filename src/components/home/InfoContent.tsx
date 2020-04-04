@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import animationData from "../../lottie/contentAnimation.json";
 import displayUtils from "../../utils/displayUtils";
 import ReButton from "../commonUIElements";
-import AppRoute from "../appRoute.js";
+import AppRoute from "../appRoute";
 
 const defaultOptions = {
     loop: true,
@@ -40,7 +40,7 @@ export default function InfoContent() {
     return (
         <Box>
             <Container fixed>
-                <Grid container fontWeight="fontWeightLight">
+                <Grid container>
                     <Grid item sm={12}>
                         <Box display={displayUtils.smDownVisible} alignItems="center">
                             <Lottie options={defaultOptions} width="100%" />

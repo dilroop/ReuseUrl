@@ -57,9 +57,9 @@ export default function Signup() {
         <Box py={2} className={classes.background}>
             <Container fixed>
                 <Box>
-                    <Card className={classes.card}>
+                    <Card>
                         <CardContent>
-                            <Grid container fontWeight="fontWeightLight">
+                            <Grid container>
                                 <Grid item xs={12}>
                                     <Box display={displayUtils.smDownVisible}>
                                         <Box display="flex" justifyContent="center">
@@ -79,7 +79,7 @@ export default function Signup() {
                                 <Grid item xs={12} md={6}>
                                     <Box display="flex" justifyContent="center" alignItems="center" height="100%">
                                         <Box px={2} py={4}>
-                                            <Typography variant="h5" component="h2" mb={2}>
+                                            <Typography variant="h5" component="h2">
                                                 Signup to Reuse Url
                                             </Typography>
                                             <TextField

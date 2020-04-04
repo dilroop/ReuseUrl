@@ -1,4 +1,4 @@
-  var firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "xxxxx",
     authDomain: "xxxxx",
     databaseURL: "xxxxx",
