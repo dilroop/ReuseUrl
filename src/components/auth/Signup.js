@@ -36,16 +36,17 @@ const useStyles = makeStyles(theme => ({
 export default function Signup() {
     const classes = useStyles();
     const [values, setValues] = React.useState({
-        name: "JPY",
-        age: "",
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
         country: "IN"
     });
 
     const countries = countryList().getData();
-    console.log(countries);
 
-    const loginOnClick = () => {
-        alert("Not Implemented");
+    const onSignUpClick = () => {
+        
     };
 
     const handleChange = name => event => {
@@ -86,25 +87,42 @@ export default function Signup() {
                                                 label="Email"
                                                 className={classes.textField}
                                                 type="text"
+                                                value={values.email}
+                                                onChange={handleChange("email")}
                                                 autoComplete="email"
-                                                variant="filled"
-                                            />
-                                            <br />
-                                            <TextField
-                                                id="passwordField"
-                                                label="Password"
-                                                className={classes.textField}
-                                                type="password"
-                                                autoComplete="password"
                                                 variant="filled"
                                             />
                                             <br />
                                             <TextField
                                                 id="nameField"
                                                 label="Name"
+                                                value={values.name}
                                                 className={classes.textField}
                                                 type="text"
+                                                onChange={handleChange("name")}
                                                 autoComplete="name"
+                                                variant="filled"
+                                            />
+                                            <br />
+                                            <TextField
+                                                id="passwordField"
+                                                label="Password"
+                                                value={values.password}
+                                                className={classes.textField}
+                                                type="password"
+                                                onChange={handleChange("password")}
+                                                autoComplete="password"
+                                                variant="filled"
+                                            />
+                                            <br />
+                                            <TextField
+                                                id="confirmPasswordField"
+                                                label="Confirm Password"
+                                                className={classes.textField}
+                                                type="password"
+                                                value={values.confirmPassword}
+                                                onChange={handleChange("confirmPassword")}
+                                                autoComplete="password"
                                                 variant="filled"
                                             />
                                             <br />
@@ -120,8 +138,7 @@ export default function Signup() {
                                                         className: classes.textField
                                                     }
                                                 }}
-                                                variant="filled"
-                                            >
+                                                variant="filled">
                                                 {countries.map(option => (
                                                     <MenuItem key={option.value} value={option.value}>
                                                         {option.label}
@@ -129,8 +146,8 @@ export default function Signup() {
                                                 ))}
                                             </TextField>
                                             <br />
-                                            <Box mt={2}>
-                                                <ReButton onClick={loginOnClick}>Signup</ReButton>
+                                            <Box mt={2} display="flex" justifyContent="center">
+                                                <ReButton onClick={onSignUpClick}>Signup</ReButton>
                                             </Box>
                                         </Box>
                                     </Box>
