@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import AppRoute from "../appRoute";
 import { Switch, Route } from "react-router-dom";
+import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -43,6 +44,20 @@ export default function Bar() {
                 <Switch>
                     <Route
                         exact
+                        path={AppRoute.Home}
+                        render={() => (
+                            <Box >
+                                <Button color="inherit" component={Link} to={AppRoute.Signup}>
+                                    Signup
+                                </Button>
+                                <Button color="inherit" component={Link} to={AppRoute.Login}>
+                                    Login
+                                </Button>
+                            </Box>
+                        )}
+                    />
+                    <Route
+                        exact
                         path={AppRoute.Login}
                         render={() => (
                             <Button color="inherit" component={Link} to={AppRoute.Signup}>
@@ -51,7 +66,7 @@ export default function Bar() {
                         )}
                     />
                     <Route
-                        path={AppRoute.Home}
+                        path={AppRoute.Signup}
                         render={() => (
                             <Button color="inherit" component={Link} to={AppRoute.Login}>
                                 Login
