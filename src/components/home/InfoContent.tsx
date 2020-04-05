@@ -1,7 +1,7 @@
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
+import { Theme, makeStyles, StyledProps } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 import Lottie from "react-lottie";
@@ -20,7 +20,7 @@ const defaultOptions = {
     }
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles<Theme, StyledProps>(theme => ({
     background: {
         flexGrow: 1,
         background: "linear-gradient(90deg, #da5a76 30%, #db8254 90%)",
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function InfoContent() {
-    const classes = useStyles();
+    const classes = useStyles({} as StyledProps);
     let history = useHistory();
 
     const signUpOnClick = () => {

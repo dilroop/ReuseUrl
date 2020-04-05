@@ -3,14 +3,15 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
+import { Theme ,makeStyles, StyledProps } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 import displayUtils from "../../utils/displayUtils";
 import ReButton from "../commonUIElements";
+import { AuthenticationManager } from "./AuthenticationManager";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles<Theme, StyledProps>(theme => ({
     root: {
         flexGrow: 1
     },
@@ -32,9 +33,19 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Login() {
-    const classes = useStyles();
+    const classes = useStyles({} as StyledProps);
+    
+    const [values, setValues] = React.useState({
+		email: '',
+		password: ''
+    });
+    
+    const handleChange = (name) => (event) => {
+		setValues({ ...values, [name]: event.target.value });
+	};
+
     const loginOnClick = () => {
-        alert("Not Implemented");
+        AuthenticationManager.login(values.email, values.password);
     };
 
     return (
@@ -62,6 +73,8 @@ export default function Login() {
                                                 id="emailField"
                                                 label="Email"
                                                 className={classes.textField}
+                                                onChange={handleChange('email')}
+                                                value={values.email}
                                                 type="text"
                                                 autoComplete="username"
                                                 variant="filled"
@@ -71,6 +84,8 @@ export default function Login() {
                                                 id="passwordField"
                                                 label="Password"
                                                 className={classes.textField}
+                                                onChange={handleChange('password')}
+                                                value={values.password}
                                                 type="password"
                                                 autoComplete="password"
                                                 variant="filled"

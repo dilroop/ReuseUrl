@@ -1,10 +1,10 @@
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
+import { Theme, makeStyles, StyledProps } from "@material-ui/core/styles";
 import React from "react";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles<Theme, StyledProps>(theme => ({
     footer: {
         flexGrow: 1,
         background: "#222222",
@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Footer() {
-    const classes = useStyles();
+    const classes = useStyles({} as StyledProps);
 
     return (
         <Box className={classes.footer} py={4}>
